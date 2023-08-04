@@ -23,11 +23,19 @@ export function useAnalytics() {
         return;
       }
 
+      if (!title) {
+        console.error(
+          "Firebase analytics logEvent requires a title, preferably one of the suggested event titles at https://developers.google.com/analytics/devguides/collection/ga4/reference/events"
+        );
+      }
+
       logEvent(analytics, title, meta);
     },
     pageview: () => {
       if (isDevelopment) {
-        console.info("pageview not running in development");
+        console.info(
+          "Firebase analytics pageview not running on localhost or with NODE_ENV === development."
+        );
         return;
       }
 

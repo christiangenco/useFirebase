@@ -4,3 +4,16 @@
 # Firestore
 
 - automatically maps dates with `toDate()`
+
+```js
+import { renderHook, act } from "@testing-library/react-hooks";
+test("useCounter increments count", () => {
+  const { result } = renderHook(() => useCounter());
+
+  act(() => {
+    result.current.increment();
+  });
+
+  expect(result.current.count).toBe(1);
+});
+```

@@ -18,6 +18,7 @@ export function useDoc(docPath, config = { live: true }) {
   if (user && path === "") path = `/users/${user.uid}`;
 
   if (!path) path = "/";
+  path = path.replace(/\/+/, "/");
 
   const docRef = doc(db, path);
   const [data, setData] = useState(null);
