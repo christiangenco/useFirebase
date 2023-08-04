@@ -1,5 +1,5 @@
 {
-  "name": "use-firebase",
+  "name": "useFirebase",
   "version": "0.0.1",
   "description": "React hooks for interacting with Firebase services.",
   "main": "index.js",
