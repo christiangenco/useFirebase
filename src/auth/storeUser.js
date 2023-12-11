@@ -3,7 +3,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { getUserProperties } from "./getUserProperties";
 import { mapDates } from "../firestore/mapDates";
 
-export async function storeUser({ user, db, userDataKey }) {
+export async function storeUser({ user, db, userDataKey = "uid" }) {
   if (!user?.uid) return;
   const userRef = doc(db, "users", user[userDataKey]);
 
